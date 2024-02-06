@@ -1,0 +1,68 @@
+﻿@page
+@model MMC.WEB.Pages.LoginModel
+@{
+    Layout = null;
+}
+
+<div class="card">
+    <h2 class="card-title">Login</h2>
+    <form method="post">
+        <div class="form-group">
+            <input type="text" id="username" name="username" placeholder="Username" required />
+        </div>
+        <div class="form-group">
+            <input type="password" id="password" name="password" placeholder="Password" required />
+        </div>
+        <button asp-page-handler="Login">Login</button>
+    </form>
+</div>
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+    }
+    .card {
+        width: 300px;
+        margin: 0 auto;
+        margin-top: 100px;
+        padding: 20px;
+        border-radius: 10px;
+        background-color: #fff;
+        box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
+    }
+
+    .card-title {
+        text-align: center;
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+
+    .form-group {
+        margin-bottom: 20px;
+    }
+
+    input[type="text"],
+    input[type="password"] {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-sizing: border-box;
+    }
+
+    button {
+        width: 100%;
+        padding: 10px;
+        border: none;
+        border-radius: 5px;
+        background-color: #007bff;
+        color: #fff;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+</style>
