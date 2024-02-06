@@ -1,0 +1,91 @@
+{
+  "GlobalConfiguration": {
+    "BaseUrl": "https://localhost:44327"
+  },
+  "Routes": [
+    {
+      "UpstreamPathTemplate": "/gateway/Event/FindAll",
+      "UpstreamHttpMethod": [ "Get" ],
+      "DownstreamPathTemplate": "/api/Event/FindAll",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 44396
+        }
+      ],
+      "RateLimitOptions": {
+        "EnableRateLimiting": true,
+        "Period": "10s",
+        "PeriodTimespan": 10,
+        "Limit": 15
+      },
+      "FileCacheOptions": {
+        "TtlSeconds": 10
+      },
+      "HealthChecks": [
+        {
+          "Key": "FindAllEvents",
+          "Timeout": 5000,
+          "Uri": "/health"
+        }
+      ]
+    },
+    {
+      "UpstreamPathTemplate": "/gateway/Event/Create",
+      "UpstreamHttpMethod": [ "Post" ],
+      "DownstreamPathTemplate": "/api/Event/Create",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 44396
+        }
+      ],
+      "RateLimitOptions": {
+        "EnableRateLimiting": true,
+        "Period": "10s",
+        "PeriodTimespan": 10,
+        "Limit": 15
+      },
+      "FileCacheOptions": {
+        "TtlSeconds": 10
+      },
+      "HealthChecks": [
+        {
+          "Key": "CreateEvent",
+          "Timeout": 5000,
+          "Uri": "/health"
+        }
+      ]
+    },
+    {
+      "UpstreamPathTemplate": "/gateway/Session/Create",
+      "UpstreamHttpMethod": [ "Post" ],
+      "DownstreamPathTemplate": "/api/Session/Create",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 44396
+        }
+      ],
+      "RateLimitOptions": {
+        "EnableRateLimiting": true,
+        "Period": "10s",
+        "PeriodTimespan": 10,
+        "Limit": 15
+      },
+      "FileCacheOptions": {
+        "TtlSeconds": 10
+      },
+      "HealthChecks": [
+        {
+          "Key": "FindAllSessions",
+          "Timeout": 5000,
+          "Uri": "/health"
+        }
+      ]
+    }
+  ]
+}
