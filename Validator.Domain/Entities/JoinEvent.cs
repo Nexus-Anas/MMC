@@ -3,12 +3,12 @@
 public class JoinEvent
 {
     public int Id { get; private set; }
-    public int ParticipantId { get; private set; }
-    public int EventId { get; private set; }
+    public Guid ParticipantId { get; private set; }
+    public Guid EventId { get; private set; }
     public DateTime ParticipationDate { get; private set; }
     public bool IsApproved { get; private set; }
 
-    public JoinEvent(int participantId, int eventId)
+    public JoinEvent(Guid participantId, Guid eventId)
     {
         ParticipantId = participantId;
         EventId = eventId;

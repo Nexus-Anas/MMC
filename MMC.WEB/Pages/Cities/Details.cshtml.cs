@@ -31,7 +31,7 @@ public class DetailsModel : PageModel
             return Page();
         }
 
-        await _service.Update(City.Id, City);
+        await _service.Update(City);
         return RedirectToPage("/Cities/Index");
     }
 

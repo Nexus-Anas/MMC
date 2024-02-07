@@ -29,6 +29,6 @@ public class Participant
         Phone = phone;
         Gender = gender;
         CityId = cityId;
-        UserId = userId;
+        UserId = new Guid("3e89166a-4aae-42c5-9c2e-bb2d48c0a348");
     }
 }

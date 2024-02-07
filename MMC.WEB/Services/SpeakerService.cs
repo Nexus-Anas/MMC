@@ -33,9 +33,9 @@ public class SpeakerService
         return await response.Content.ReadFromJsonAsync<Speaker>();
     }
 
-    public async Task<Speaker> Update(Guid id, Speaker speaker)
+    public async Task<Speaker> Update(Speaker speaker)
     {
-        var response = await _http.PutAsJsonAsync($"{_baseUrl}api/{_controller}/{id}", speaker);
+        var response = await _http.PutAsJsonAsync($"{_baseUrl}api/{_controller}", speaker);
         response.EnsureSuccessStatusCode();
         return await response.Content.ReadFromJsonAsync<Speaker>();
     }

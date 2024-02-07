@@ -1,68 +1,68 @@
 ﻿@page
 @model MMC.WEB.Pages.LoginModel
 @{
-    Layout = null;
+    ViewData["Title"] = "Login";
+    Layout = "_LoginLayout";
 }
 
-<div class="card">
-    <h2 class="card-title">Login</h2>
-    <form method="post">
-        <div class="form-group">
-            <input type="text" id="username" name="username" placeholder="Username" required />
+
+<div class="page-wrapper">
+    <div class="page-content--bge5">
+        <div class="container mt-5">
+            <div class="login-wrap">
+                <div class="login-content">
+                    <div class="login-logo">
+                        <a href="#">
+                            <h3 class="text text-secondary mb-2">MOROCCO MICROSOFT COMMUNITY</h3>
+                            <h2>ADMIN LOGIN</h2>
+                            @if (Model.Msg != string.Empty)
+                            {
+                                <div class="alert alert-danger" role="alert">
+                                    <p>@Model.Msg</p>
+                                </div>
+                            }
+                        </a>
+                    </div>
+                    <div class="login-form">
+                        <form action="" method="post">
+                            <div class="form-group">
+                                <label>Username</label>
+                                <input asp-for="LUsername" class="au-input au-input--full" type="text"placeholder="enter your username">
+                            </div>
+                            <div class="form-group">
+                                <label>Password</label>
+                                <input asp-for="LPassword" class="au-input au-input--full" type="password"placeholder="type your password">
+                            </div>
+                            <button asp-page-handler="Login" class="au-btn au-btn--block au-btn--blue m-b-20">sign in</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="form-group">
-            <input type="password" id="password" name="password" placeholder="Password" required />
-        </div>
-        <button asp-page-handler="Login">Login</button>
-    </form>
+    </div>
+
 </div>
 
-<style>
-    body {
-        font-family: Arial, sans-serif;
-        background-color: #f4f4f4;
-    }
-    .card {
-        width: 300px;
-        margin: 0 auto;
-        margin-top: 100px;
-        padding: 20px;
-        border-radius: 10px;
-        background-color: #fff;
-        box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
-    }
+<!-- Jquery JS-->
+<script src="vendor/jquery-3.2.1.min.js"></script>
+<!-- Bootstrap JS-->
+<script src="vendor/bootstrap-4.1/popper.min.js"></script>
+<script src="vendor/bootstrap-4.1/bootstrap.min.js"></script>
+<!-- Vendor JS       -->
+<script src="vendor/slick/slick.min.js">
+</script>
+<script src="vendor/wow/wow.min.js"></script>
+<script src="vendor/animsition/animsition.min.js"></script>
+<script src="vendor/bootstrap-progressbar/bootstrap-progressbar.min.js">
+</script>
+<script src="vendor/counter-up/jquery.waypoints.min.js"></script>
+<script src="vendor/counter-up/jquery.counterup.min.js">
+</script>
+<script src="vendor/circle-progress/circle-progress.min.js"></script>
+<script src="vendor/perfect-scrollbar/perfect-scrollbar.js"></script>
+<script src="vendor/chartjs/Chart.bundle.min.js"></script>
+<script src="vendor/select2/select2.min.js">
+</script>
 
-    .card-title {
-        text-align: center;
-        font-size: 24px;
-        margin-bottom: 20px;
-    }
-
-    .form-group {
-        margin-bottom: 20px;
-    }
-
-    input[type="text"],
-    input[type="password"] {
-        width: 100%;
-        padding: 10px;
-        border: 1px solid #ccc;
-        border-radius: 5px;
-        box-sizing: border-box;
-    }
-
-    button {
-        width: 100%;
-        padding: 10px;
-        border: none;
-        border-radius: 5px;
-        background-color: #007bff;
-        color: #fff;
-        cursor: pointer;
-        transition: background-color 0.3s ease;
-    }
-
-        button:hover {
-            background-color: #0056b3;
-        }
-</style>
+<!-- Main JS-->
+<script src="js/main.js"></script>

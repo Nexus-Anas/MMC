@@ -37,7 +37,11 @@ public class DetailsModel : PageModel
 
     public async Task<IActionResult> OnPostUpdate()
     {
-        Event.ImagePath = await InsertImagesAsync();
+        string path = await InsertImagesAsync();
+        if (path != null)
+        {
+            Event.ImagePath = await InsertImagesAsync();
+        }
         if (string.IsNullOrEmpty(Event.Title))
         {
             ModelState.AddModelError("Event.Title", "The field \"Title\" is required!");
@@ -45,7 +49,7 @@ public class DetailsModel : PageModel
             return Page();
         }
 
-        await _service.Update(Event.Id, Event);
+        await _service.Update(Event);
         return RedirectToPage("/Events/Index");
     }
 

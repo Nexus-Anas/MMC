@@ -33,9 +33,9 @@ public class CityService
         return await response.Content.ReadFromJsonAsync<City>();
     }
 
-    public async Task<City> Update(int id, City city)
+    public async Task<City> Update(City city)
     {
-        var response = await _http.PutAsJsonAsync($"{_baseUrl}api/{_controller}/{id}", city);
+        var response = await _http.PutAsJsonAsync($"{_baseUrl}api/{_controller}", city);
         response.EnsureSuccessStatusCode();
         return await response.Content.ReadFromJsonAsync<City>();
     }

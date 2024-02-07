@@ -30,14 +30,14 @@ namespace Validator.Infrastructure.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<int>("EventId")
-                        .HasColumnType("int");
+                    b.Property<Guid>("EventId")
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<bool>("IsApproved")
                         .HasColumnType("bit");
 
-                    b.Property<int>("ParticipantId")
-                        .HasColumnType("int");
+                    b.Property<Guid>("ParticipantId")
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<DateTime>("ParticipationDate")
                         .HasColumnType("datetime2");

@@ -1,5 +1,5 @@
 ﻿namespace Validator.Domain.DTOs;
 
-public record JoinEventGetDTO(int Id, int ParticipantId, int EventId, DateTime ParticipationDate, bool IsApproved);
-public record JoinEventPostDTO(int ParticipantId, int EventId);
-public record JoinEventPutDTO(int Id, int ParticipantId, int EventId, DateTime ParticipationDate, bool IsApproved);
+public record JoinEventGetDTO(int Id, Guid ParticipantId, Guid EventId, DateTime ParticipationDate, bool IsApproved);
+public record JoinEventPostDTO(Guid ParticipantId, Guid EventId);
+public record JoinEventPutDTO(int Id, Guid ParticipantId, Guid EventId, DateTime ParticipationDate, bool IsApproved);

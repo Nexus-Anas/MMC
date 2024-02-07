@@ -31,7 +31,7 @@ public class DetailsModel : PageModel
             return Page();
         }
 
-        await _service.Update(Theme.Id, Theme);
+        await _service.Update(Theme);
         return RedirectToPage("/Themes/Index");
     }
 

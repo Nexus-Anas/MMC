@@ -33,9 +33,9 @@ public class ThemeService
         return await response.Content.ReadFromJsonAsync<Theme>();
     }
 
-    public async Task<Theme> Update(int id, Theme city)
+    public async Task<Theme> Update(Theme city)
     {
-        var response = await _http.PutAsJsonAsync($"{_baseUrl}api/{_controller}/{id}", city);
+        var response = await _http.PutAsJsonAsync($"{_baseUrl}api/{_controller}", city);
         response.EnsureSuccessStatusCode();
         return await response.Content.ReadFromJsonAsync<Theme>();
     }

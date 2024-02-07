@@ -23,6 +23,11 @@ public class AutoMapperProfile : Profile
         CreateMap<ModePostDTO, Mode>();
         CreateMap<ModePutDTO, Mode>();
 
+        //Participant Mapping
+        CreateMap<Participant, ParticipantGetDTO>();
+        CreateMap<ParticipantPostDTO, Participant>();
+        CreateMap<ParticipantPutDTO, Participant>();
+
         //Partner Mapping
         CreateMap<Partner, PartnerGetDTO>();
         CreateMap<PartnerPostDTO, Partner>();
@@ -48,7 +53,7 @@ public class AutoMapperProfile : Profile
         CreateMap<ThemePostDTO, Theme>();
         CreateMap<ThemePutDTO, Theme>();
 
-        //Theme Mapping
+        //User Mapping
         CreateMap<User, UserGetDTO>();
     }
 }

@@ -33,9 +33,9 @@ public class EventService
         return await response.Content.ReadFromJsonAsync<Event>();
     }
 
-    public async Task<Event> Update(Guid id, Event @event)
+    public async Task<Event> Update(Event @event)
     {
-        var response = await _http.PutAsJsonAsync($"{_baseUrl}api/{_controller}/{id}", @event);
+        var response = await _http.PutAsJsonAsync($"{_baseUrl}api/{_controller}", @event);
         response.EnsureSuccessStatusCode();
         return await response.Content.ReadFromJsonAsync<Event>();
     }
