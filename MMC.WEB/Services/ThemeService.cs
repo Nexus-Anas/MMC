@@ -11,38 +11,38 @@ public class ThemeService
     public ThemeService(HttpClient http, IConfiguration configuration)
     {
         _http = http;
-        _baseUrl = configuration.GetValue<string>("ApiSettings:BaseUrl");
+        _baseUrl = configuration.GetValue<string>("ApiSettings:GatewayUrl");
     }
 
     public async Task<Theme> Find(int id)
     {
-        var response = await _http.GetFromJsonAsync<Theme>($"{_baseUrl}api/{_controller}/{id}");
+        var response = await _http.GetFromJsonAsync<Theme>($"{_baseUrl}gateway/{_controller}/{id}");
         return response;
     }
 
     public async Task<IEnumerable<Theme>> FindAll()
     {
-        var response = await _http.GetFromJsonAsync<IEnumerable<Theme>>($"{_baseUrl}api/{_controller}");
+        var response = await _http.GetFromJsonAsync<IEnumerable<Theme>>($"{_baseUrl}gateway/{_controller}");
         return response;
     }
 
     public async Task<Theme> Create(Theme city)
     {
-        var response = await _http.PostAsJsonAsync($"{_baseUrl}api/{_controller}", city);
+        var response = await _http.PostAsJsonAsync($"{_baseUrl}gateway/{_controller}", city);
         response.EnsureSuccessStatusCode();
         return await response.Content.ReadFromJsonAsync<Theme>();
     }
 
     public async Task<Theme> Update(Theme city)
     {
-        var response = await _http.PutAsJsonAsync($"{_baseUrl}api/{_controller}", city);
+        var response = await _http.PutAsJsonAsync($"{_baseUrl}gateway/{_controller}", city);
         response.EnsureSuccessStatusCode();
         return await response.Content.ReadFromJsonAsync<Theme>();
     }
 
     public async Task Delete(int id)
     {
-        var response = await _http.DeleteAsync($"{_baseUrl}api/{_controller}/{id}");
+        var response = await _http.DeleteAsync($"{_baseUrl}gateway/{_controller}/{id}");
         response.EnsureSuccessStatusCode();
     }
 }

@@ -6,25 +6,25 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddHttpClient<CityService>(client =>
 {
-    client.BaseAddress = new Uri(builder.Configuration.GetValue<string>("ApiSettings:BaseUrl"));
+    client.BaseAddress = new Uri(builder.Configuration.GetValue<string>("ApiSettings:GatewayUrl"));
 });
 builder.Services.AddScoped<CityService>();
 
 builder.Services.AddHttpClient<ThemeService>(client =>
 {
-    client.BaseAddress = new Uri(builder.Configuration.GetValue<string>("ApiSettings:BaseUrl"));
+    client.BaseAddress = new Uri(builder.Configuration.GetValue<string>("ApiSettings:GatewayUrl"));
 });
 builder.Services.AddScoped<ThemeService>();
 
 builder.Services.AddHttpClient<EventService>(client =>
 {
-    client.BaseAddress = new Uri(builder.Configuration.GetValue<string>("ApiSettings:BaseUrl"));
+    client.BaseAddress = new Uri(builder.Configuration.GetValue<string>("ApiSettings:GatewayUrl"));
 });
 builder.Services.AddScoped<EventService>();
 
 builder.Services.AddHttpClient<SpeakerService>(client =>
 {
-    client.BaseAddress = new Uri(builder.Configuration.GetValue<string>("ApiSettings:BaseUrl"));
+    client.BaseAddress = new Uri(builder.Configuration.GetValue<string>("ApiSettings:GatewayUrl"));
 });
 builder.Services.AddScoped<SpeakerService>();
 
