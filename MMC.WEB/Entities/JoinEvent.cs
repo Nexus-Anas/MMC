@@ -3,8 +3,8 @@
 public class JoinEvent
 {
     public int Id { get; set; }
-    public int ParticipantId { get; set; }
-    public int EventId { get; set; }
+    public Guid ParticipantId { get; set; }
+    public Guid EventId { get; set; }
     public DateTime ParticipationDate { get; set; }
     public bool IsApproved { get; set; }
 }
